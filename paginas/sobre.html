@@ -1,0 +1,45 @@
+<html>
+   <head>
+   </head>
+   
+   <body>
+      <form name="myform" action="">
+         <p> SOBRE!!</p>
+		 <p>Página de informações sobre a empresa, como ramo de atividade e localização.</p>
+      </form>
+   </body>
+
+         <script type = "text/javascript">
+            function setCookie(name,exdays)
+				{
+				 if (document.cookie) // linha 1
+				{
+				var o_cookie = document.cookie;
+				if(o_cookie!=undefined && o_cookie.length > 0) // verificando se o mesmo existe
+					{
+					var posCookie = o_cookie.indexOf("home"); // checando se existe o cookieSeuNome 
+					if (posCookie >= 0) //se existir o cookie ira mostrar na tela
+					{
+						var expires;
+						var date; 
+						var value;
+						var hist;
+							
+						date = new Date();
+						date.setTime(date.getTime()+(exdays*24*60*60*1000));
+						expires = date.toUTCString();
+						value = "Navegacao";
+						hist = date;	
+
+						var cookie = name + "=" + hist + "; " + expires;
+
+						document.cookie = cookie;
+					}
+				}
+			}
+		}
+		setCookie("sobre", 10);
+
+		</script>
+
+</html>

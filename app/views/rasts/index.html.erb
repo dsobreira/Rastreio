@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Rasts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Domain</th>
+      <th>Path</th>
+      <th>Page</th>
+      <th>Access</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rasts.each do |rast| %>
+      <tr>
+        <td><%= rast.email %></td>
+        <td><%= rast.domain %></td>
+        <td><%= rast.path %></td>
+        <td><%= rast.page %></td>
+        <td><%= rast.access %></td>
+        <td><%= link_to 'Show', rast %></td>
+        <td><%= link_to 'Edit', edit_rast_path(rast) %></td>
+        <td><%= link_to 'Destroy', rast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rast', new_rast_path %>

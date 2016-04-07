@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @rast.email %>
+</p>
+
+<p>
+  <strong>Domain:</strong>
+  <%= @rast.domain %>
+</p>
+
+<p>
+  <strong>Path:</strong>
+  <%= @rast.path %>
+</p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @rast.page %>
+</p>
+
+<p>
+  <strong>Access:</strong>
+  <%= @rast.access %>
+</p>
+
+<%= link_to 'Edit', edit_rast_path(@rast) %> |
+<%= link_to 'Back', rasts_path %>

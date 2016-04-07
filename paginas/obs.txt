@@ -1,0 +1,1 @@
+Foi necessário instalar e configurar o MySQL, Ruby e Rails, ocasionando a não conclusão da tarefa, no prazo.

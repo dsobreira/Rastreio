@@ -1,0 +1,2 @@
+module RastsHelper
+end

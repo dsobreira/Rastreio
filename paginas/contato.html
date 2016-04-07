@@ -1,0 +1,78 @@
+<form action="" method="post" id="login-form">
+         Email para Contato!!
+		<div>
+		<input type="text" value="" id="nameBox" name='usrname'>
+		<br>
+		<input type="button" value="Enviar" id="submit" onclick="putCookie(document.getElementsByTagName('form'));">
+		<br>
+		<p></p>
+		</div>
+		<div id="value"></div>
+</form>
+      
+         <script type = "text/javascript">
+            function setCookie(name,exdays)
+				{
+				 if (document.cookie) // linha 1
+				{
+				var o_cookie = document.cookie;
+				if(o_cookie!=undefined && o_cookie.length > 0) // verificando se o mesmo existe
+					{
+					var posCookie = o_cookie.indexOf("home"); // checando se existe o cookieSeuNome 
+					if (posCookie >= 0) //se existir o cookie ira mostrar na tela
+					{
+						var expires;
+						var date; 
+						var value;
+						var hist;
+							
+						date = new Date();
+						date.setTime(date.getTime()+(exdays*24*60*60*1000));
+						expires = date.toUTCString();
+						value = "Navegacao";
+						hist = date;	
+
+						var cookie = name + "=" + hist + "; " + expires;
+
+						document.cookie = cookie;
+					}
+				}
+			}
+		}
+		setCookie("contato", 10);
+
+		function setCookieMail(name, value){
+			var expires;
+			var date; 
+				
+			date = new Date();
+			date.setTime(date.getTime()+(10*24*60*60*1000));
+			expires = date.toUTCString();
+			hist = value;	
+
+			var cookie = name + "=" + hist + "; " + expires;
+
+			document.cookie = cookie;
+			}
+
+			//this should set the UserName cookie to the proper value;
+			function putCookie(form){
+				setCookieMail("email", form[0].usrname.value);
+				return true;
+			}
+		</script>			
+		<script type = "text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js">
+		 $(function() {
+		   var frm = $(document.cookie);
+		   var dat = JSON.stringify(frm.serializeArray());
+
+		   $.post(
+			 frm.attr("action"),
+			 dat,
+			 function(data) {
+			   alert("Response: " + data);
+			 }
+		   );
+		 });
+
+		</script>
